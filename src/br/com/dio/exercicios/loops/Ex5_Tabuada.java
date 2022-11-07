@@ -18,12 +18,19 @@ public class Ex5_Tabuada {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Tabuada: ");
+        System.out.print("Tabuada: ");
         int tabuada = scan.nextInt();
 
-        System.out.println("Tabuada de " + tabuada);
-        for(int i = 1; i <= 10; i = i + 1) {
-            System.out.println(tabuada + " X " + i + " = " + (tabuada*i));
+        while (tabuada < 1 || tabuada > 10) {
+            System.out.print("Entre com um número entre 1 e 10: ");
+            tabuada = scan.nextInt();
+        }
+
+        scan.close();
+
+        System.out.println("Tabuada do " + tabuada);
+        for (int i = 1; i <= 10; i = i + 1) {
+            System.out.println(tabuada + " X " + i + " = " + (tabuada * i));
         }
     }
 
