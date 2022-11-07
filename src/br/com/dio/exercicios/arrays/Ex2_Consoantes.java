@@ -16,28 +16,32 @@ public class Ex2_Consoantes {
 
         int count = 0;
         do {
-            System.out.println("Letra: ");
+            System.out.print("Letra: ");
             String letra = scan.next();
 
-            if ( !(letra.equalsIgnoreCase("a") |
-                    letra.equalsIgnoreCase("e") |
-                    letra.equalsIgnoreCase("i") |
-                    letra.equalsIgnoreCase("o") |
-                    letra.equalsIgnoreCase("u")) )  {
+            boolean vogal = (letra.equalsIgnoreCase("a") ||
+                    letra.equalsIgnoreCase("e") ||
+                    letra.equalsIgnoreCase("i") ||
+                    letra.equalsIgnoreCase("o") ||
+                    letra.equalsIgnoreCase("u"));
+
+            if (!vogal) {
                 consoantes[count] = letra;
                 quantidadeConsoantes++;
             }
 
             count++;
 
-        } while(count < consoantes.length);
+        } while (count < consoantes.length);
+
+        scan.close();
 
         System.out.print("Consoantes: ");
-        for ( String consoante  :  consoantes ) {
-            if ( consoante != null)
+        for (String consoante : consoantes) {
+            if (consoante != null)
                 System.out.print(consoante + " ");
         }
-        System.out.println("Quantidade de consoantes: " + quantidadeConsoantes);
+        System.out.println("\nQuantidade de consoantes: " + quantidadeConsoantes);
         System.out.println(consoantes.length);
 
     }
